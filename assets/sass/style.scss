@@ -59,17 +59,17 @@ h6 {
 	display: none;
 }
 
-.jc-img {
+.bs-img {
 	width: 100%;
 }
 
-.jc-svg {
+.bs-svg {
 	width: 100%;
 	fill: #fff;
 }
 
 .form-group,
-.jc-form-toggle {
+.bs-form-toggle {
 	margin-bottom: 1em;
 }
 
@@ -84,7 +84,7 @@ h6 {
 	}
 }
 
-.jc-select-choice {
+.bs-select-choice {
 	text-align: center;
 	font-weight: 400;
 	line-height: 1.15;
@@ -98,7 +98,7 @@ h6 {
 	}
 }
 
-.jc-select {
+.bs-select {
 	position: absolute;
 	top: 0;
 	right: 0;
@@ -142,8 +142,8 @@ h6 {
 	}
 }
 
-.jc-btn,
-.jc-btn:hover {
+.bs-btn,
+.bs-btn:hover {
 	background-color: transparent;
 	border-color: transparent;
 	border-radius: 0;
@@ -157,7 +157,7 @@ h6 {
 	}
 }
 
-.jc-heading {
+.bs-heading {
 	font-weight: 400;
 	line-height: 1.15;
 	text-align: center;
@@ -171,13 +171,13 @@ h6 {
 	}
 }
 
-.jc-copy {
+.bs-copy {
 	font-size: 1.5em;
 	font-weight: 300;
 	text-align: center;
 }
 
-.jc-btn {
+.bs-btn {
 	font-size: 2.5em;
 	font-weight: 400;
 	text-align: center;
@@ -186,11 +186,11 @@ h6 {
 	display: block;
 }
 
-.jc-iframe-container {
+.bs-iframe-container {
 	position: relative;
 	padding-top: 100%;
 
-	.jc-iframe {
+	.bs-iframe {
 		position: absolute;
 		top: 0;
 		width: 100%;

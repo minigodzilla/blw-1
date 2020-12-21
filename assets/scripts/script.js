@@ -60,23 +60,23 @@ $(function()
 $(function()
 {
 
-	$('.jc-select').on('change',function() {
+	$('.bs-select').on('change',function() {
 
 		var value = $(this).val();
 
-		$('.jc-select-choice').html(value);
+		$('.bs-select-choice').html(value);
 	});
 
-	$('.jc-form-toggle-option').on('click', function() {
+	$('.bs-form-toggle-option').on('click', function() {
 
 		var value = $(this).attr('data-value');
 
-		$('.jc-form-toggle-input').attr('value', value);
+		$('.bs-form-toggle-input').attr('value', value);
 
 	});
 
 
-	$('.jc-form-check-span').on('click', function() {
+	$('.bs-form-check-span').on('click', function() {
 
 		$('input#Custom1').trigger('click');
 
@@ -85,10 +85,10 @@ $(function()
 
 	////////////////////////////////////////////////////////////////////////////////
 
-	var $form              = $('#jc-register-form');
+	var $form              = $('#bs-register-form');
 	var $inputs            = $form.find ('.form-control');
 	var $email             = $form.find ('.form-control[name=Email]');
-	var $button            = $form.find ('.jc-btn-submit');
+	var $button            = $form.find ('.bs-btn-submit');
 	var errorState         = false;
 
 	////////////////////////////////////////////////////////////////////////////////
@@ -176,13 +176,13 @@ $(function()
 
 		// now we do ajax
 		// get form
-		var form = $('#jc-register-form')[0];
+		var form = $('#bs-register-form')[0];
 
 		// create an FormData object 
 		var data = new FormData(form);
 
 		// prevent duplicate submissions
-		$form.find('.jc-btn-submit').prop('disabled', true);
+		$form.find('.bs-btn-submit').prop('disabled', true);
 
 		// do a barrel roll
 		$.ajax({
@@ -196,14 +196,14 @@ $(function()
 			timeout: 800000,
 			success: function (data) {
 
-				$form.addClass('jc-success');
+				$form.addClass('bs-success');
 
 			},
 			error: function (e) {
 
 				console.log("ERROR : ", e);
 
-				$form.addClass('jc-error');
+				$form.addClass('bs-error');
 
 			}
 		});
