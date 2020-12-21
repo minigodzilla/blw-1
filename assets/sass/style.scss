@@ -240,37 +240,120 @@ header {
 
 .bs-future {
 	margin-top: 5em;
-	background-image: url('../img/future-1.jpg');
-	background-size: cover;
-	color: #fff;
-	padding: 14em 4.5em 4.5em 4.5em;
 
-	.bs-pin {
-		width: 1.75em;
-		height: 2.625em;
-		margin-bottom: 0.875em;
+	.bs-future-main {
+		background-image: url('../img/future-1.jpg');
+		background-size: cover;
+		padding: 14em 4.5em 4.5em 4.5em;
+		color: #fff;
+
+		.bs-pin {
+			width: 1.75em;
+			height: 2.625em;
+			margin-bottom: 0.875em;
+		}
+
+		.bs-eyebrow {
+			margin-bottom: 1em;
+		}
+
+		.bs-heading {
+			font-size: 2.75em;
+			font-weight: 700;
+			margin-bottom: 0.625em;
+		}
+
+		.bs-copy {
+			margin-bottom: 2.5em;
+		}
+
+		.bs-btn-row {
+			margin-bottom: 2.75em;
+		}
+
+		.bs-logo-menoke {
+			width: 12.375em;
+			height: 3.875em;
+		}
 	}
 
-	.bs-eyebrow {
-		margin-bottom: 1em;
-	}
+	.bs-future-others {
+		display: grid;
+		grid-template-columns: repeat(3, 1fr);
+		grid-template-rows: repeat(2, 1fr);
+		grid-column-gap: 1em;
+		grid-row-gap: 1em;
+		margin-top: 1em;
 
-	.bs-heading {
-		font-size: 2.75em;
-		font-weight: 700;
-		margin-bottom: 0.625em;
-	}
+		.bs-future-item {
+			overflow: hidden;
+			position: relative;
+			
+			background-size: cover;
+			padding-top: 100%;
+			color: #fff;
 
-	.bs-copy {
-		margin-bottom: 2.5em;
-	}
+			&.bs-future-item-2 { background-image: url('../img/future-2.jpg'); }
+			&.bs-future-item-3 { background-image: url('../img/future-3.jpg'); }
+			&.bs-future-item-4 { background-image: url('../img/future-4.jpg'); }
+			&.bs-future-item-5 { background-image: url('../img/future-5.jpg'); }
+			&.bs-future-item-6 { background-image: url('../img/future-6.jpg'); }
 
-	.bs-btn-row {
-		margin-bottom: 2.75em;
-	}
+			&::before {
+				content: '';
+				position: absolute;
+				top: 50%;
+				right: 0;
+				bottom: 0;
+				left: 0;
+				background-image: linear-gradient(to bottom, rgba(0,0,0,0), rgba(0,0,0,0.7));
+			}
 
-	.bs-logo-menoke {
-		width: 12.375em;
-		height: 3.875em;
+			.bs-future-item-details {
+				position: absolute;
+				right: 0;
+				bottom: 0;
+				left: 0;
+				text-align: center;
+
+				.bs-eyebrow {
+					margin-bottom: 0.5em;
+				}
+
+				.bs-heading {
+					font-size: 1.5em;
+					font-weight: 700;
+					margin-bottom: 1em;
+				}
+
+				.bs-svg {
+					width: 2.25em;
+					height: 2.25em;
+					fill: #fff;
+					transform: rotate(90deg);
+					margin-bottom: 2em;
+				}
+			}
+		}
+
+		.bs-future-cta {
+			display: flex;
+			flex-direction: column;
+			justify-content: center;
+			padding: 3em;
+
+			.bs-pin {
+				width: 2em;
+				fill: #000;
+				margin-bottom: 2em;
+			}
+
+			.bs-copy {
+				font-size: 1.5em;
+				font-weight: 700;
+				line-height: 1.325;
+				margin-bottom: 1.75em;
+			}
+		}
 	}
 }
