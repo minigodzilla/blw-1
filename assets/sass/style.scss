@@ -195,8 +195,12 @@ h6 {
 	}
 }
 
+//
+// sections
+
 header {
 	position: fixed;
+	z-index: 2;
 	top: 0;
 	right: 0;
 	left: 0;
@@ -216,8 +220,38 @@ header {
 	}
 }
 
-//
-// sections
+.bs-hero {
+
+	.bs-slide {
+		position: relative;
+		padding-top: 56.25%;
+		background-size: cover;
+		color: #fff;
+
+		.bs-slide-details {
+			position: absolute;
+			right: 0;
+			bottom: 0;
+			left: 0;
+			text-align: center;
+
+			.bs-pin {
+				width: 1.75em;
+				height: 2.625em;
+				margin-bottom: 0.875em;
+			}
+
+			.bs-logo-menoke {
+				width: 27em;
+				margin-bottom: 3em;
+			}
+
+			.bs-btn-row {
+				margin-bottom: 5em;
+			}
+		}
+	}
+}
 
 .bs-welcome {
 	margin-top: 5em;
@@ -354,6 +388,99 @@ header {
 				line-height: 1.325;
 				margin-bottom: 1.75em;
 			}
+		}
+	}
+}
+
+.bs-register {
+	margin-top: 4em;
+
+	.bs-heading {
+		font-size: 3em;
+		font-weight: 700;
+		margin-bottom: 0.5em;
+	}
+
+	.bs-eyebrow {
+		display: inline-block;
+		margin-top: 1.875em;
+		margin-right: 2em;
+	}
+
+	#bs-register-form {
+		position: relative;
+
+		.bs-form-error-container,
+		.bs-form-success-container {
+			position: absolute;
+			width: 100%;
+			left: 0;
+			top: 10em;
+			text-align: center;
+			opacity: 0;
+			pointer-events: none;
+		}
+
+		&.bs-success,
+		&.bs-error {
+			.bs-form-container {
+				opacity: 0;
+			}
+		}
+
+		&.bs-success .bs-form-success-container,
+		&.bs-error .bs-form-error-container {
+			opacity: 1;
+		}
+	}
+
+	.bs-map {
+		height: 100%;
+		object-fit: cover;
+	}
+}
+
+footer {
+	margin-top: 6em;
+	margin-bottom: 6em;
+
+	.bs-to-home {
+		display: block;
+		width: 12.5em;
+		height: 3.25em;
+
+		.bs-svg {
+			fill: #000;
+		}
+	}
+	ul {
+		list-style: none;
+		margin: 0;
+		padding: 0;
+		columns: 2;
+
+		li {
+			margin-bottom: 1em;
+			a,
+			a:hover {
+				color: inherit;
+				font-weight: 400;
+			}
+		}
+	}
+	.bs-disclaimer {
+		font-size: 0.75em;
+		color: #ccc;
+		line-height: 1.325;
+	}
+	.bs-feed-heading-row {
+		display: flex;
+
+		.bs-heading {
+			margin-bottom: 0.5em;
+			font-size: 1.75em;
+			font-weight: 700;
+			margin-right: auto;
 		}
 	}
 }
