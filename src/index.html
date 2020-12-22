@@ -1,15 +1,9 @@
 <!doctype html>
 <html lang="en">
 
-<head>
-	<meta charset="UTF-8" />
-	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-	<meta http-equiv="X-UA-Compatible" content="ie=edge" />
-	<title>Bosseini</title>
-	<link rel="stylesheet" href="assets/css/style.css" />
-</head>
+<partial src="head.html" title="Bosseini"></partial>
 
-<body>
+<body class="home">
 
 	<partial src="header.html"></partial>
 
@@ -66,7 +60,7 @@
 			</svg>
 		</section>
 		<section class="bs-future bs-animated-section">
-			<a class="bs-future-item bs-future-item-2" href="#" style="background-image: url('/assets/img/future-lake-couchiching-thumb.jpg');">
+			<a class="bs-future-item" href="/future/lake-couchiching.html" style="background-image: url('/assets/img/future-lake-couchiching-thumb.jpg');">
 				<div class="bs-future-item-details bs-animated-item bs-animate-order-1">
 					<p class="bs-eyebrow">FUTURE DEVELOPMENT</p>
 					<h1 class="bs-heading">Lake Couchiching Residence</h1>
@@ -75,7 +69,7 @@
 					</svg>
 				</div>
 			</a>
-			<a class="bs-future-item bs-future-item-3" href="#" style="background-image: url('/assets/img/future-memorial-residential-commercial-thumb.jpg');">
+			<a class="bs-future-item" href="/future/memorial.html" style="background-image: url('/assets/img/future-memorial-thumb.jpg');">
 				<div class="bs-future-item-details bs-animated-item bs-animate-order-2">
 					<p class="bs-eyebrow">FUTURE DEVELOPMENT</p>
 					<h1 class="bs-heading">Memorial Residential &amp; Commercial</h1>
@@ -84,7 +78,7 @@
 					</svg>
 				</div>
 			</a>
-			<a class="bs-future-item bs-future-item-3" href="#" style="background-image: url('/assets/img/future-sand-cherry-court-thumb.jpg');">
+			<a class="bs-future-item" href="#" style="background-image: url('/assets/img/future-sand-cherry-court-thumb.jpg');">
 				<div class="bs-future-item-details bs-animated-item bs-animate-order-3">
 					<p class="bs-eyebrow">FUTURE DEVELOPMENT</p>
 					<h1 class="bs-heading">Sand Cherry Court</h1>
@@ -93,8 +87,8 @@
 					</svg>
 				</div>
 			</a>
-			<a class="bs-future-item bs-future-item-5 bs-animated-item bs-animate-order-4" href="#" style="background-image: url('/assets/img/future-hawk-ridge-residence-thumb.jpg');">
-				<div class="bs-future-item-details">
+			<a class="bs-future-item" href="#" style="background-image: url('/assets/img/future-hawk-ridge-residence-thumb.jpg');">
+				<div class="bs-future-item-details bs-animated-item bs-animate-order-4">
 					<p class="bs-eyebrow">FUTURE DEVELOPMENT</p>
 					<h1 class="bs-heading">Hawk Ridge Residence</h1>
 					<svg class="bs-svg bs-cta-arrow" viewBox="0 0 34.295 34.325">
@@ -102,8 +96,8 @@
 					</svg>
 				</div>
 			</a>
-			<a class="bs-future-item bs-future-item-6 bs-animated-item bs-animate-order-5" href="#" style="background-image: url('/assets/img/future-6200-yonge-st-thumb.jpg');">
-				<div class="bs-future-item-details">
+			<a class="bs-future-item" href="#" style="background-image: url('/assets/img/future-6200-yonge-st-thumb.jpg');">
+				<div class="bs-future-item-details bs-animated-item bs-animate-order-5">
 					<p class="bs-eyebrow">FUTURE DEVELOPMENT</p>
 					<h1 class="bs-heading">6200 Yonge Street</h1>
 					<svg class="bs-svg bs-cta-arrow" viewBox="0 0 34.295 34.325">
@@ -126,12 +120,110 @@
 				</div>
 			</div>
 		</section>
-		<partial src="register.html"></partial>
+		<section class="bs-register" id="register">
+			<div class="container">
+				<div class="row">
+					<div class="col-12 col-md-6">
+						<h1 class="bs-heading">Register Now</h1>
+					</div>
+					<div class="col-12 col-md-6">
+						<div class="bs-eyebrow bs-phone">416-386-0222</div>
+						<div class="bs-eyebrow bs-email">INFO@BOSSEINI.COM</div>
+					</div>
+				</div>
+				<div class="row">
+					<div class="col-12 col-md-6 bs-form-col">
+						<form id="bs-register-form" action="register.php" method="post">
+							<div class="bs-form-container">
+								<input type="hidden" id="cid" name="cid" value="22864" />
+								<input type="hidden" id="Origin" name="Origin" value="Microsite Registration" />
+								<div class="row bs-form-fields">
+									<div class="col-12">
+										<div class="form-group">
+											<input type="text" class="form-control" id="FirstName" name="FirstName" placeholder="First Name*">
+											<small id="v-error-FirstName" class="invalid-feedback form-text text-danger">Please enter your first name.</small>
+										</div>
+									</div>
+									<div class="col-12">
+										<div class="form-group">
+											<input type="text" class="form-control" id="LastName" name="LastName" placeholder="Last Name*">
+											<small id="v-error-LastName" class="invalid-feedback form-text text-danger">Please enter your last name.</small>
+										</div>
+									</div>
+									<div class="col-6 bs-phone-col">
+										<div class="form-group">
+											<input type="tel" class="form-control" id="Phone" name="Phone" placeholder="Phone*">
+											<small id="v-error-Phone" class="invalid-feedback form-text text-danger">Please enter your phone number.</small>
+										</div>
+									</div>
+									<div class="col-6 bs-email-col">
+										<div class="form-group">
+											<input type="text" class="form-control" id="Email" name="Email" placeholder="Email*">
+											<small id="v-error-Email" class="invalid-feedback form-text text-danger">Please enter your email address.</small>
+										</div>
+									</div>
+									<div class="col-12">
+										<div class="form-group">
+											<textarea class="form-control" id="Message" name="Message" placeholder="Message"></textarea>
+										</div>
+									</div>
+									<!-- <div class="col-12">
+										<div class="form-group p-relative">
+											<div class="bs-select-choice">How did you hear about us?</div>
+											<select class="bs-select" id="Custom2" name="Custom2">
+												<option value="" disabled selected>How did you hear about us?</option>
+												<option>Site signage</option>
+												<option>Mississauga News</option>
+												<option>Oakville Beaver</option>
+												<option>Snapped Article</option>
+												<option>Google Search</option>
+												<option>Google Display Ad</option>
+												<option>Instagram Ad</option>
+												<option>Facebook Ad</option>
+												<option>Referral</option>
+											</select>
+											<small id="v-error-Custom2" class="invalid-feedback form-text text-danger">Please tell us how you heard about us.</small>
+										</div>
+									</div>
+									<div class="col-12">
+										<div class="bs-form-toggle">
+											<input class="bs-form-toggle-input" type="hidden" value="true" id="isBroker" name="isBroker">
+											<div class="bs-form-toggle-label">Are you a Realtor?</div>
+											<div class="bs-form-toggle-option bs-no" data-value="false">No</div>
+											<div class="bs-form-toggle-option bs-yes" data-value="true">Yes</div>
+										</div>
+									</div>
+									<div class="col-12">
+										<div class="form-check">
+											<label class="form-check-label" for="Custom1">Do you agree to the <a href="terms.html">terms and conditions</a>?</label>
+											<input class="form-check-input" type="checkbox" value="" id="Custom1" name="Custom1">
+											<span class="bs-form-check-span">Yes</span>
+										</div>
+									</div> -->
+									<div class="col-12">
+										<div class="form-group">
+											<button type="submit" class="btn bs-btn bs-invert bs-btn-submit">SUBMIT</button>
+										</div>
+									</div>
+								</div>
+							</div>
+							<div class="bs-form-error-container">
+								<p class="bs-copy">An error occured.<br/>Please try again later.</p>
+							</div>
+							<div class="bs-form-success-container">
+								<p class="bs-copy">Thank you<br/>for your registration!</p>
+							</div>
+						</form>
+					</div>
+					<div class="col-12 col-md-6 h-100">
+						<img class="w-100 h-100 bs-img bs-map" src="/assets/img/bosseini-location.png"/>
+					</div>
+				</div>
+			</div>
+		</section>
 	</main>
 
 	<partial src="footer.html"></partial>
-
-	<script src="./assets/js/script.js"></script>
 </body>
 
 </html>

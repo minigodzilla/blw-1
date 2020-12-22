@@ -120,13 +120,22 @@ h6 {
 }
 
 .form-control {
-	border-color: #000;
+	border-color: transparent;
 	border-radius: 0;
+	border-width: 0;
 	color: #000;
-	padding: 1.25rem 0.75rem;
+	margin: 0;
+	padding: 0.75em;
+	font-size: 1em;
+	line-height: 1;
+
+	&,
+	&:hover {
+		background-color: #eee;
+	}
 
 	&::placeholder {
-		color: #000;
+		color: #aaa;
 	}
 }
 
@@ -281,26 +290,6 @@ section {
 	background-color: #fff;
 }
 
-.bs-half-hero {
-	position: relative;
-	height: 50.625em;
-
-	.bs-image-col {
-		padding-left: 0;
-	}
-
-	.bs-image {
-		// position: absolute;
-		// top: 0;
-		// bottom: 0;
-		// left: 0;
-		width: 100%;
-		height: 100%;
-		// object-fit: cover;
-		// object-position: 50% 50%;
-	}
-}
-
 .bs-hero {
 	z-index: 1;
 
@@ -340,6 +329,42 @@ section {
 			.bs-btn-row {
 				margin-bottom: 5em;
 			}
+		}
+	}
+}
+
+.bs-half-hero {
+	z-index: 1;
+	position: relative;
+	height: 50.625em;
+
+	.bs-image-col {
+		height: 100%;
+		padding-left: 0;
+
+		.bs-image {
+			width: 100%;
+			height: 100%;
+		}
+	}
+
+	.bs-text-col {
+		padding-top: 4em;
+
+		.bs-eyebrow {
+			margin-bottom: 0.75em;
+		}
+
+		.bs-copy {
+			margin-right: 14em;
+		}
+
+		.bs-list {
+			list-style: none;
+			margin-left: 0;
+			padding: 0;
+			font-size: 1.125em;
+			font-weight: 700;
 		}
 	}
 }
@@ -488,12 +513,41 @@ section {
 	}
 }
 
+.bs-video-section {
+	padding-top: 5em;
+}
+
+.bs-image-section {
+	padding-bottom: 5em;
+}
+
+.bs-details-section {
+	padding-bottom: 5em;
+	text-align: center;
+
+	.bs-subheading {
+		font-size: 1.5em;
+		line-height: 1.25;
+	}
+}
+
 .bs-register {
 	padding-top: 5em;
 	padding-bottom: 5em;
 
 	.bs-heading {
 		font-size: 3em;
+	}
+
+	.bs-copy {
+		display: none;
+	}
+
+	&[data-has-details="true"] .bs-copy {
+		display: block;
+		margin-top: -1em;
+		margin-bottom: 2em;
+		font-size: 0.875em;
 	}
 
 	.bs-eyebrow {
@@ -526,6 +580,14 @@ section {
 		&.bs-success .bs-form-success-container,
 		&.bs-error .bs-form-error-container {
 			opacity: 1;
+		}
+
+		.bs-phone-col {
+			padding-right: 0.5em;
+		}
+
+		.bs-email-col {
+			padding-left: 0.5em;
 		}
 	}
 
