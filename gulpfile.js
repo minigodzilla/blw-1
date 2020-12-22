@@ -36,6 +36,7 @@ function js() {
         'node_modules/jquery/dist/jquery.min.js',
         'node_modules/bootstrap/dist/js/bootstrap.min.js',
         'node_modules/scrollmagic/scrollmagic/minified/ScrollMagic.min.js',
+        'node_modules/rellax/rellax.min.js',
         'node_modules/owl.carousel/dist/owl.carousel.min.js',
         'assets/scripts/script.js'])
         .pipe(sourcemaps.init())
