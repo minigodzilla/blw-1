@@ -62,7 +62,13 @@ $(function()
 		var thisCarousel = $(this).find(".owl-stage");
 		var activeSlide = thisCarousel.find(".active .bs-slide").attr("data-slide");
 		seasonsHeader.attr("data-active-slide", activeSlide);
-		console.log(activeSlide);
+	});
+
+	$('.bs-seasons-nav .bs-item').on('click', function() {
+		var slide = $(this).attr('data-to-slide');
+		var seasonsHeader = $('.bs-seasons-nav');
+		$('.bs-season-carousel').trigger('to.owl.carousel', [slide, 200, true]);
+		seasonsHeader.attr("data-active-slide", slide);
 	});
 
 	$('.bs-carousel').owlCarousel({
