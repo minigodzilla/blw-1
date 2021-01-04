@@ -53,12 +53,23 @@ $(function()
 $(function()
 {
 	
-	// $('.bs-hero').owlCarousel({
-	// 	dots: true,
-	// 	loop: true,
-	// 	nav: true,
-	// 	items: 1
-	// });
+	$('.bs-season-carousel').owlCarousel({
+		nav: false,
+		dots: false,
+		items: 1
+	}).on("translated.owl.carousel", function() {
+		var seasonsHeader = $('.bs-seasons-nav');
+		var thisCarousel = $(this).find(".owl-stage");
+		var activeSlide = thisCarousel.find(".active .bs-slide").attr("data-slide");
+		seasonsHeader.attr("data-active-slide", activeSlide);
+		console.log(activeSlide);
+	});
+
+	$('.bs-carousel').owlCarousel({
+		nav: true,
+		dots: false,
+		items: 1
+	});
 
 });
 
