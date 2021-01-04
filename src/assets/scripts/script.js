@@ -1,3 +1,22 @@
+//----------------------------------------------------------------------------//
+// Nav                                                                        //
+//----------------------------------------------------------------------------//
+$(function()
+{
+
+	$('.bs-nav-toggle').on('click', function() {
+
+		$('header').addClass('bs-nav-open');
+
+		$('header').on('mouseleave', function() { 
+			setTimeout(function() {
+				$('header').removeClass('bs-nav-open');
+			},1000);
+		});
+
+	});
+});
+
 
 //----------------------------------------------------------------------------//
 // Parallax                                                                   //
@@ -64,7 +83,12 @@ $(function()
 		seasonsHeader.attr("data-active-slide", activeSlide);
 	});
 
-	$('.bs-seasons-nav .bs-item').on('click', function() {
+	$('.coming-soon .bs-reasons-grid .bs-grid-item').on('click', function() {
+		var slide = $(this).attr('data-to-slide');
+		$('.bs-carousel').trigger('to.owl.carousel', [slide, 200, true]);
+	});
+
+	$('.coming-soon .bs-seasons-nav .bs-item').on('click', function() {
 		var slide = $(this).attr('data-to-slide');
 		var seasonsHeader = $('.bs-seasons-nav');
 		$('.bs-season-carousel').trigger('to.owl.carousel', [slide, 200, true]);

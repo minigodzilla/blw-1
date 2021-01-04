@@ -3,6 +3,22 @@
 
 $grid-gutter-width: 4em;
 
+$grid-breakpoints: (
+  xs: 0,
+  sm: 576px,
+  md: 768px,
+  lg: 992px,
+  xl: 1200px,
+  xxl: 1600px
+);
+
+$container-max-widths: (
+  sm: 540px,
+  md: 720px,
+  lg: 960px,
+  xl: 1140px,
+  xxl: 1530px
+);
 
 //
 // imports
@@ -87,6 +103,10 @@ body {
 
 	@include media-breakpoint-up(xl) {
 		font-size: 16px;
+	}
+
+	@include media-breakpoint-up(xxl) {
+		font-size: 21.5px;
 	}
 }
 
@@ -282,6 +302,68 @@ header {
 			fill: #fff;
 		}
 	}
+
+	.bs-nav {
+		position: absolute;
+		z-index: 2;
+		right: 2.25em;
+		transition: transform 200ms ease;
+		transform: scaleY(0);
+		pointer-events: none;
+
+		.bs-btn {
+			margin-right: 0;
+			margin-left: 0.5em;
+			color: #fff;
+			transition: color 200ms ease;
+		}
+	}
+
+	&.bs-nav-open .bs-nav {
+		transform: scaleY(1);
+		pointer-events: auto;
+
+		.bs-btn {
+			color: #000;
+		}
+	}
+
+	.bs-nav-toggle {
+		position: relative;
+		width: 1.5em;
+		height: 1.5em;
+		margin-left: auto;
+		margin-right: 2.25em;
+		display: flex;
+		align-items: center;
+		cursor: pointer;
+
+		.bs-icon {
+			position: absolute;
+			width: 100%;
+			height: 0.125em;
+			background-color: #000;
+
+			&::before,
+			&::after {
+				content: '';
+				position: absolute;
+				top: 0;
+				right: 0;
+				bottom: 0;
+				left: 0;
+				background-color: #000;
+			}
+
+			&::before {
+				transform: translateY(-400%);
+			}
+
+			&::after {
+				transform: translateY(400%);
+			}
+		}
+	}
 }
 
 section {
@@ -424,7 +506,7 @@ section {
 	grid-template-rows: repeat(2, 1fr);
 	grid-column-gap: 1em;
 	grid-row-gap: 1em;
-	margin-top: 1em;
+	padding-top: 1em;
 
 	.bs-grid-item {
 		overflow: hidden;
@@ -723,6 +805,8 @@ footer {
 				left: 50%;
 				height: 2.25em;
 				transform: translate(-50%,-50%);
+				opacity: 0;
+				transition: opacity 200ms ease;
 
 				@each $breakpoint, $container-max-width in $container-max-widths {
 					width: $container-max-width;
@@ -733,6 +817,8 @@ footer {
 					position: absolute;
 					width: 2.25em;
 					height: 2.25em;
+					cursor: pointer;
+					transition: opacity 200ms ease;
 
 					&:focus {
 						outline: none;
@@ -740,6 +826,9 @@ footer {
 				
 					span {
 						display: none;
+					}
+					&.disabled {
+						opacity: 0;
 					}
 				}
 				.owl-prev {
@@ -751,6 +840,10 @@ footer {
 					right: 1em;
 					background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 34.3 34.3'%3E%3Ccircle cx='17.1' cy='17.2' fill='%23000' r='17.1'/%3E%3Cpath d='m19.7 17.3-8.3 8.3 2.8 2.8 11.3-11.2-11.3-11.3-3 3z' fill='%23fff'/%3E%3C/svg%3E");
 				}
+			}
+
+			&:hover .owl-nav {
+				opacity: 1;
 			}
 		}
 	}
@@ -788,6 +881,7 @@ footer {
 					align-items: center;
 					justify-content: center;
 					transition: background-color 200ms ease;
+					cursor: pointer;
 
 					.bs-icon {
 						width: 2em;
@@ -802,72 +896,24 @@ footer {
 						transition: color 200ms ease;
 					}
 				}
-				&[data-active-slide="0"] {
-					.bs-item-1 {
-						background-color: #eee;
 
-						.bs-icon {
-							fill: #000;
+				@for $i from 0 through 3 {
+					&[data-active-slide="#{$i}"] {
+						.bs-item-#{$i} {
+							background-color: #eee;
+
+							.bs-icon {
+								fill: #000;
+							}
+
+							.bs-label {
+								color: #000;
+							}
 						}
 
-						.bs-label {
-							color: #000;
+						.bs-pin {
+							left: (25% * $i);
 						}
-					}
-
-					.bs-pin {
-						left: 0;
-					}
-				}
-				&[data-active-slide="1"] {
-					.bs-item-2 {
-						background-color: #eee;
-
-						.bs-icon {
-							fill: #000;
-						}
-
-						.bs-label {
-							color: #000;
-						}
-					}
-
-					.bs-pin {
-						left: 25%;
-					}
-				}
-				&[data-active-slide="2"] {
-					.bs-item-3 {
-						background-color: #eee;
-
-						.bs-icon {
-							fill: #000;
-						}
-
-						.bs-label {
-							color: #000;
-						}
-					}
-
-					.bs-pin {
-						left: 50%;
-					}
-				}
-				&[data-active-slide="3"] {
-					.bs-item-4 {
-						background-color: #eee;
-
-						.bs-icon {
-							fill: #000;
-						}
-
-						.bs-label {
-							color: #000;
-						}
-					}
-
-					.bs-pin {
-						left: 75%;
 					}
 				}
 				.bs-pin {
