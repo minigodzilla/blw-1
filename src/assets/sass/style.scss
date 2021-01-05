@@ -408,23 +408,64 @@ section {
 .bs-hero {
 	z-index: 1;
 
+	&.bs-gallery-active .bs-slide .bs-image {
+		transition: opacity 1s ease;
+	}
+
 	.bs-slide {
 		position: relative;
 		padding-top: 56.25%;
 		color: #fff;
 		overflow: hidden;
 
+		.bs-dots {
+			position: absolute;
+			z-index: 10;
+			right: 0;
+			bottom: 2em;
+			left: 0;
+			display: flex;
+			justify-content: center;
+
+			.bs-dot {
+				width: 0.5em;
+				height: 0.5em;
+				margin: 0 0.5em;
+				border-radius: 50%;
+				background-color: #fff;
+				opacity: 0.325;
+				transition: opacity 1s ease;
+
+				&.bs-active {
+					opacity: 1;
+				}
+			}
+		}
+
 		.bs-image {
 			width: 100%;
 			position: absolute;
+			z-index: 1;
 			top: 0;
 			right: 0;
 			bottom: 0;
 			left: 0;
+			opacity: 0;
+
+			&.bs-active {
+				z-index: 3;
+				opacity: 1;
+			}
+
+			&.bs-rear {
+				z-index: 2;
+				opacity: 1;
+			}
 		}
 
 		.bs-slide-details {
 			position: absolute;
+			z-index: 10;
 			right: 0;
 			bottom: 0;
 			left: 0;

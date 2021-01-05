@@ -1,4 +1,47 @@
 //----------------------------------------------------------------------------//
+// Hero Gallery                                                               //
+//----------------------------------------------------------------------------//
+$(function()
+{
+	function doTransition() {
+		$(gallery + ' .bs-dots .bs-dot').removeClass('bs-active');
+		$(gallery + ' .bs-dots .bs-dot' + ":eq(" + index + ")").addClass('bs-active');
+
+		$(images).removeClass('bs-active bs-rear');
+		$(images + ":eq(" + index + ")").addClass('bs-active');
+		$(images + ":eq(" + rear + ")").addClass('bs-rear');
+		if (++index === count) index = 0;
+		if (++rear === count) rear = 0;
+	}
+
+	var gallery = ".home .bs-hero .bs-slide";	// gallery container
+	var images = gallery + " .bs-image";	// image selector
+	var interval = 4000;					// milliseconds between transitions
+	var index = 0;							// starting index
+	var count = $(images).length			// image count
+	var rear = (count - 1)					// index of image behind active image
+
+	setTimeout(function() {
+		$('.bs-hero').addClass('bs-gallery-active');
+	}, interval);
+
+	setInterval(function() {
+		doTransition();
+	}, interval);
+
+	$(gallery).prepend("<div class='bs-dots'></div>");
+
+	$(images).each(function(i) {
+		$(gallery + " .bs-dots").append("<div class='bs-dot'></div>");
+	});
+
+	doTransition();
+
+});
+
+
+
+//----------------------------------------------------------------------------//
 // Nav                                                                        //
 //----------------------------------------------------------------------------//
 $(function()
