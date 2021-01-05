@@ -279,6 +279,35 @@ h6 {
 	}
 }
 
+@keyframes pin-anim-loop {
+	0% { transform: rotate3d(0,0.5,0,-30deg) skew(0,5deg); }
+	50% { transform: rotate3d(0,0.5,0,30deg) skew(0,-5deg); }
+	100% { transform: rotate3d(0,0.5,0,-30deg) skew(0,5deg); }
+}
+
+@keyframes pin-drop {
+	to { transform: translateY(0%); }
+}
+
+.bs-animated-pin-container {
+	transform: translateY(-500%);
+
+	.bs-pin {
+		width: 1.75em;
+		height: 2.625em;
+		animation-name: pin-anim-loop;
+		animation-duration: 3s;
+		animation-iteration-count: infinite;
+	}
+}
+
+.bs-animated .bs-animated-pin-container {
+	animation-name: pin-drop;
+	animation-duration: 1s;
+	animation-fill-mode: forwards;
+	animation-timing-function: cubic-bezier(.83,.29,1,1);
+}
+
 //
 // sections
 
@@ -397,32 +426,12 @@ section {
 			left: 0;
 			text-align: center;
 
-			@keyframes pin-anim-loop {
-				0% { transform: rotate3d(0,0.5,0,-30deg) skew(0,5deg); }
-				50% { transform: rotate3d(0,0.5,0,30deg) skew(0,-5deg); }
-				100% { transform: rotate3d(0,0.5,0,-30deg) skew(0,5deg); }
-			}
+			.bs-animated-pin-container {
+				transform: translateY(-1300%);
 
-			@keyframes pin-drop {
-				0% { transform: translateY(-1000%); }
-				100% { transform: translateY(0%); }
-			}
-
-			.bs-pin-container {
-				animation-name: pin-drop;
-				animation-delay: 0.5s;
-				animation-duration: 1s;
-				animation-fill-mode: backwards;
-				animation-timing-function: cubic-bezier(.83,.29,1,1);
-			}
-
-			.bs-pin {
-				width: 1.75em;
-				height: 2.625em;
-				margin-bottom: 0.875em;
-				animation-name: pin-anim-loop;
-				animation-duration: 3s;
-				animation-iteration-count: infinite;
+				.bs-pin {
+					margin-bottom: 0.875em;
+				}
 			}
 
 			.bs-logo-menoke {
@@ -498,25 +507,12 @@ section {
 	padding: 14em 4.5em 4.5em 4.5em;
 	color: #fff;
 
-	.bs-pin-container {
+	.bs-animated-pin-container {
 		transform: translateY(-1000%);
-	}
 
-	&.bs-animated .bs-pin-container {
-		animation-name: pin-drop;
-		animation-duration: 1s;
-		animation-fill-mode: forwards;
-		animation-timing-function: cubic-bezier(.83,.29,1,1);
-	}
-
-	.bs-pin {
-		width: 1.75em;
-		height: 2.625em;
-		margin-bottom: 0.875em;
-		animation-name: pin-anim-loop;
-		animation-duration: 3s;
-		animation-iteration-count: infinite;
-		margin-bottom: 0.875em;
+		.bs-pin {
+			margin-bottom: 0.875em;
+		}
 	}
 
 	.bs-eyebrow {
@@ -611,10 +607,17 @@ section {
 	}
 
 	.bs-grid-cta {
+		position: relative;
+		z-index: -1;
 		display: flex;
 		flex-direction: column;
 		justify-content: center;
 		padding: 3em;
+
+		.bs-animated-pin-container {
+			transform: translateY(-600%);
+			animation-delay: 0.5s,
+		}
 
 		.bs-pin {
 			width: 2em;
