@@ -228,12 +228,25 @@ h6 {
 	font-weight: 700;
 	text-align: center;
 	text-decoration: none;
-	border-color: transparent;
+	border-color: #fff;
 	border-radius: 0.25em;
 	border-width: 0;
+	border-style: solid;
 	padding: 0.75em 2.5em;
 	cursor: pointer;
 	letter-spacing: 0.125em;
+	transition: all 200ms ease;
+
+	&:hover {
+		//background-color: #000;
+		//color: #fff;
+		transform: scale(1.05);
+	}
+
+	&:active {
+		transform: scale(1.05) translateY(0.125em);
+		transition: all 50ms ease;
+	}
 
 	&.bs-invert {
 		background-color: #000;
@@ -405,12 +418,58 @@ section {
 	background-color: #fff;
 }
 
+.home {
+	.bs-hero {
+
+		&.bs-gallery-active .bs-slide .bs-image {
+			transition: opacity 1s ease;
+		}
+
+		.bs-slide {
+
+			.bs-dots {
+				position: absolute;
+				z-index: 10;
+				right: 0;
+				bottom: 2em;
+				left: 0;
+				display: flex;
+				justify-content: center;
+
+				.bs-dot {
+					width: 0.5em;
+					height: 0.5em;
+					margin: 0 0.5em;
+					border-radius: 50%;
+					background-color: #fff;
+					opacity: 0.325;
+					transition: opacity 1s ease;
+
+					&.bs-active {
+						opacity: 1;
+					}
+				}
+			}
+			.bs-image {
+				z-index: 1;
+				opacity: 0;
+
+				&.bs-active {
+					z-index: 3;
+					opacity: 1;
+				}
+
+				&.bs-rear {
+					z-index: 2;
+					opacity: 1;
+				}
+			}
+		}
+	}
+}
+
 .bs-hero {
 	z-index: 1;
-
-	&.bs-gallery-active .bs-slide .bs-image {
-		transition: opacity 1s ease;
-	}
 
 	.bs-slide {
 		position: relative;
@@ -418,49 +477,13 @@ section {
 		color: #fff;
 		overflow: hidden;
 
-		.bs-dots {
-			position: absolute;
-			z-index: 10;
-			right: 0;
-			bottom: 2em;
-			left: 0;
-			display: flex;
-			justify-content: center;
-
-			.bs-dot {
-				width: 0.5em;
-				height: 0.5em;
-				margin: 0 0.5em;
-				border-radius: 50%;
-				background-color: #fff;
-				opacity: 0.325;
-				transition: opacity 1s ease;
-
-				&.bs-active {
-					opacity: 1;
-				}
-			}
-		}
-
 		.bs-image {
 			width: 100%;
 			position: absolute;
-			z-index: 1;
 			top: 0;
 			right: 0;
 			bottom: 0;
 			left: 0;
-			opacity: 0;
-
-			&.bs-active {
-				z-index: 3;
-				opacity: 1;
-			}
-
-			&.bs-rear {
-				z-index: 2;
-				opacity: 1;
-			}
 		}
 
 		.bs-slide-details {
