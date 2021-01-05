@@ -217,8 +217,7 @@ h6 {
 	}
 }
 
-.bs-btn,
-.bs-btn:hover {
+.bs-btn {
 	display: inline-block;
 	margin-right: 0.5em;
 	margin-bottom: 0;
@@ -236,10 +235,11 @@ h6 {
 	cursor: pointer;
 	letter-spacing: 0.125em;
 	transition: all 200ms ease;
+	backface-visibility: hidden;
 
 	&:hover {
-		//background-color: #000;
-		//color: #fff;
+		text-decoration: inherit;
+		color: #000;
 		transform: scale(1.05);
 	}
 
@@ -251,6 +251,10 @@ h6 {
 	&.bs-invert {
 		background-color: #000;
 		color: #fff;
+
+		&:hover {
+			color: #fff;
+		}
 	}
 }
 
