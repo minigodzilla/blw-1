@@ -397,10 +397,31 @@ section {
 			left: 0;
 			text-align: center;
 
+			@keyframes pin-anim-loop {
+				0% { transform: rotate3d(0,0.5,0,-30deg) skew(0,5deg); }
+				50% { transform: rotate3d(0,0.5,0,30deg) skew(0,-5deg); }
+				100% { transform: rotate3d(0,0.5,0,-30deg) skew(0,5deg); }
+			}
+
+			@keyframes pin-drop {
+				0% { transform: translateY(-1000%); }
+				100% { transform: translateY(0%); }
+			}
+
+			.bs-pin-container {
+				animation-name: pin-drop;
+				animation-duration: 1.5s;
+				animation-fill-mode: backwards;
+				animation-timing-function: cubic-bezier(.83,.29,1,1);
+			}
+
 			.bs-pin {
 				width: 1.75em;
 				height: 2.625em;
 				margin-bottom: 0.875em;
+				animation-name: pin-anim-loop;
+				animation-duration: 3s;
+				animation-iteration-count: infinite;
 			}
 
 			.bs-logo-menoke {
