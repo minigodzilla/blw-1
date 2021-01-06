@@ -909,6 +909,11 @@ footer {
 					.bs-copy {
 						margin-bottom: 2em;
 					}
+
+					.bs-small {
+						font-size: 0.75em;
+						margin-bottom: 2em;
+					}
 				}
 			}
 
@@ -931,8 +936,16 @@ footer {
 					width: 2.25em;
 					height: 2.25em;
 					cursor: pointer;
-					transition: opacity 200ms ease;
+					transition: all 200ms ease;
 
+					&:hover {
+						transform: scale(1.05);
+					}
+
+					&:active {
+						transform: scale(1.05) translateY(0.125em);
+					}
+				
 					&:focus {
 						outline: none;
 					}
@@ -989,24 +1002,43 @@ footer {
 				background-color: #000;
 
 				.bs-item {
+					position: relative;
 					width: 25%;
-					display: flex;
-					align-items: center;
-					justify-content: center;
 					transition: background-color 200ms ease;
 					cursor: pointer;
 
-					.bs-icon {
-						width: 2em;
-						fill: #fff;
-						margin-right: 1em;
-						transition: fill 200ms ease;
+					.bs-icon-label {
+						position: absolute;
+						top: 0;
+						right: 0;
+						bottom: 0;
+						left: 0;
+						display: flex;
+						align-items: center;
+						justify-content: center;
+						transition: all 200ms ease;
+
+						.bs-icon {
+							width: 2em;
+							fill: #fff;
+							margin-right: 1em;
+							transition: fill 200ms ease;
+						}
+
+						.bs-label {
+							color: #fff;
+							font-weight: 700;
+							transition: color 200ms ease;
+						}
+					}
+				
+					&:hover .bs-icon-label {
+						transform: scale(1.05);
 					}
 
-					.bs-label {
-						color: #fff;
-						font-weight: 700;
-						transition: color 200ms ease;
+					&:active .bs-icon-label {
+						transform: scale(1.05) translateY(0.125em);
+						transition: all 50ms ease;
 					}
 				}
 
@@ -1037,6 +1069,10 @@ footer {
 					height: 3.5em;
 					fill: #000;
 					transition: left 200ms ease;
+					animation-name: pin-anim-loop;
+					animation-duration: 3s;
+					animation-iteration-count: infinite;
+					transform-origin: 50% 100%;
 				}
 			}
 		}
@@ -1061,6 +1097,7 @@ footer {
 				}
 
 				.bs-cta-arrow {
+					display: none;
 					position: absolute;
 					width: 2em;
 					transform: translate(-50%,-50%) rotate(90deg);
