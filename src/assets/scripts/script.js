@@ -39,8 +39,6 @@ $(function()
 
 });
 
-
-
 //----------------------------------------------------------------------------//
 // Nav                                                                        //
 //----------------------------------------------------------------------------//
@@ -53,11 +51,18 @@ $(function()
 
 		$('header').on('mouseleave', function() { 
 			setTimeout(function() {
-				$('header').removeClass('bs-nav-open');
-			},1000);
+				$('header').on('mouseleave', function() { 
+					$('header').removeClass('bs-nav-open');
+				});
+			},4000);
 		});
 
 	});
+
+	window.onhashchange = function() {
+		$("header").removeClass("bs-nav-open");
+	}
+
 });
 
 
