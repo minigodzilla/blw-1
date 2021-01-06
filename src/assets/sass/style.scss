@@ -468,6 +468,11 @@ section {
 					opacity: 1;
 				}
 			}
+			.bs-slide-details {
+				.bs-eyebrow {
+					line-height: 1.5;
+				}
+			}
 		}
 	}
 }
@@ -512,7 +517,7 @@ section {
 			}
 
 			.bs-btn-row {
-				margin-bottom: 5em;
+				margin-bottom: 4.5em;
 			}
 		}
 	}
