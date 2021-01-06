@@ -357,7 +357,7 @@ header {
 		position: absolute;
 		z-index: 2;
 		right: 2.25em;
-		transition: transform 200ms ease;
+		transition: transform 100ms ease;
 		transform: scaleY(0);
 		pointer-events: none;
 
@@ -825,11 +825,23 @@ footer {
 	}
 	.bs-feed-heading-row {
 		display: flex;
+		align-items: center;
 
 		.bs-heading {
 			font-size: 1.75em;
 			margin-bottom: 0.5em;
 			margin-right: auto;
+		}
+
+		.bs-social-icons {
+			margin-top: -1em;
+
+			.bs-svg {
+				max-width: 1em;
+				max-height: 1em;
+				fill: #000;
+				margin: 0 0.125em;
+			}
 		}
 	}
 }
