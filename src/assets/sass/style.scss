@@ -1180,3 +1180,24 @@ footer {
 		color: #fff;
 	}
 }
+
+.contact {
+	header {
+		position: static;
+
+		.bs-svg {
+			fill: #000;
+		}
+	}
+	section {
+		z-index: 1;
+	}
+	.bs-subheading {
+		margin-bottom: 0.75em;
+		font-size: 1.25em;
+		line-height: 1.5;
+	}
+	.bs-copy {
+		margin-bottom: 2em;
+	}
+}
