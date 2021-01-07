@@ -110,6 +110,12 @@ body {
 	}
 }
 
+a,
+a:hover {
+	color: inherit;
+	text-decoration: underline;
+}
+
 h1,
 h2,
 h3,
@@ -524,9 +530,11 @@ section {
 }
 
 .bs-half-hero {
+	overflow: hidden;
 	z-index: 1;
 	position: relative;
 	height: 50.625em;
+	margin-bottom: 3em;
 
 	.bs-image-col {
 		height: 100%;
@@ -712,15 +720,18 @@ section {
 }
 
 .bs-video-section {
-	padding-top: 5em;
+	padding-top: 3em;
+	padding-bottom: 3em;
 }
 
 .bs-image-section {
-	padding-bottom: 5em;
+	padding-top: 3em;
+	padding-bottom: 3em;
 }
 
 .bs-details-section {
-	padding-bottom: 5em;
+	padding-top: 3em;
+	padding-bottom: 3em;
 	text-align: center;
 
 	.bs-subheading {
@@ -730,8 +741,8 @@ section {
 }
 
 .bs-register {
-	padding-top: 5em;
-	padding-bottom: 5em;
+	padding-top: 3em;
+	padding-bottom: 3em;
 
 	.bs-heading {
 		font-size: 3em;

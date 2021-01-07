@@ -3,40 +3,43 @@
 //----------------------------------------------------------------------------//
 $(function()
 {
-	function doTransition() {
-		$(gallery + ' .bs-dots .bs-dot').removeClass('bs-active');
-		$(gallery + ' .bs-dots .bs-dot' + ":eq(" + index + ")").addClass('bs-active');
+	if ( $('body').hasClass( 'home' ) ) {
 
-		$(images).removeClass('bs-active bs-rear');
-		$(images + ":eq(" + index + ")").addClass('bs-active');
-		$(images + ":eq(" + rear + ")").addClass('bs-rear');
-		if (++index === count) index = 0;
-		if (++rear === count) rear = 0;
-	}
+		function doTransition() {
+			$(gallery + ' .bs-dots .bs-dot').removeClass('bs-active');
+			$(gallery + ' .bs-dots .bs-dot' + ":eq(" + index + ")").addClass('bs-active');
 
-	var gallery = ".home .bs-hero .bs-slide";	// gallery container
-	var images = gallery + " .bs-image";	// image selector
-	var interval = 4000;					// milliseconds between transitions
-	var index = 0;							// starting index
-	var count = $(images).length			// image count
-	var rear = (count - 1)					// index of image behind active image
+			$(images).removeClass('bs-active bs-rear');
+			$(images + ":eq(" + index + ")").addClass('bs-active');
+			$(images + ":eq(" + rear + ")").addClass('bs-rear');
+			if (++index === count) index = 0;
+			if (++rear === count) rear = 0;
+		}
 
-	setTimeout(function() {
-		$('.bs-hero').addClass('bs-gallery-active');
-	}, interval);
+		var gallery = ".home .bs-hero .bs-slide";	// gallery container
+		var images = gallery + " .bs-image";	// image selector
+		var interval = 4000;					// milliseconds between transitions
+		var index = 0;							// starting index
+		var count = $(images).length			// image count
+		var rear = (count - 1)					// index of image behind active image
 
-	setInterval(function() {
+		setTimeout(function() {
+			$('.bs-hero').addClass('bs-gallery-active');
+		}, interval);
+
+		setInterval(function() {
+			doTransition();
+		}, interval);
+
+		$(gallery).prepend("<div class='bs-dots'></div>");
+
+		$(images).each(function(i) {
+			$(gallery + " .bs-dots").append("<div class='bs-dot'></div>");
+		});
+
 		doTransition();
-	}, interval);
 
-	$(gallery).prepend("<div class='bs-dots'></div>");
-
-	$(images).each(function(i) {
-		$(gallery + " .bs-dots").append("<div class='bs-dot'></div>");
-	});
-
-	doTransition();
-
+	}
 });
 
 //----------------------------------------------------------------------------//
@@ -82,32 +85,13 @@ $(function()
 $(function()
 {
 
-	$('.ec-video-container .ec-video-poster').on('click', function() {
+	$('.bs-video-container .bs-video-poster').on('click', function() {
 
 		var container = $(this).parent();
-		var frame = container.find('.ec-video-frame');
-		var poster = container.find('.ec-video-poster');
+		var frame = container.find('.bs-video-frame');
+		var poster = container.find('.bs-video-poster');
 
-		container.addClass('ec-video-open');
-		frame.prepend('<div style="padding:56.25% 0 0 0;position:relative;"><iframe src="https://player.vimeo.com/video/468269570?autoplay=1&title=0&byline=0&portrait=0" style="position:absolute;top:0;left:0;width:100%;height:100%;" frameborder="0" allow="autoplay; fullscreen" allowfullscreen></iframe></div><script src="https://player.vimeo.com/api/player.js"></script>');
-
-	});
-
-});
-
-//----------------------------------------------------------------------------//
-// Video Container                                                            //
-//----------------------------------------------------------------------------//
-$(function()
-{
-
-	$('.ec-video-container .ec-video-poster').on('click', function() {
-
-		var container = $(this).parent();
-		var frame = container.find('.ec-video-frame');
-		var poster = container.find('.ec-video-poster');
-
-		container.addClass('ec-video-open');
+		container.addClass('bs-video-open');
 		frame.prepend('<div style="padding:56.25% 0 0 0;position:relative;"><iframe src="https://player.vimeo.com/video/468269570?autoplay=1&title=0&byline=0&portrait=0" style="position:absolute;top:0;left:0;width:100%;height:100%;" frameborder="0" allow="autoplay; fullscreen" allowfullscreen></iframe></div><script src="https://player.vimeo.com/api/player.js"></script>');
 
 	});
