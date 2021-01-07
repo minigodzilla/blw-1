@@ -51,9 +51,9 @@ $(function()
 
 		$('header').on('mouseleave', function() { 
 			setTimeout(function() {
-				$('header').on('mouseleave', function() { 
+				if ($('header').is(':not(:hover)')) {
 					$('header').removeClass('bs-nav-open');
-				});
+				}
 			},4000);
 		});
 
