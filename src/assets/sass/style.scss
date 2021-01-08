@@ -110,8 +110,8 @@ body {
 	}
 }
 
-a,
-a:hover {
+main a,
+main a:hover {
 	color: inherit;
 	text-decoration: underline;
 }
@@ -740,6 +740,95 @@ section {
 	}
 }
 
+.bs-carousel-section {
+	padding-top: 3em;
+	padding-bottom: 3em;
+
+	.bs-carousel {
+		.bs-slide {
+			.bs-copy-col {
+				display: flex;
+				flex-direction: column;
+				justify-content: center;
+				padding-left: 5em;
+
+				.bs-eyebrow {
+					margin-bottom: 1em;
+				}
+
+				.bs-heading {
+					margin-bottom: 1em;
+					font-size: 1.5em;
+				}
+
+				.bs-copy {
+					margin-bottom: 2em;
+				}
+
+				.bs-small {
+					font-size: 0.75em;
+					margin-bottom: 2em;
+				}
+			}
+		}
+
+		.owl-nav {
+			position: absolute;
+			top: 50%;
+			left: 50%;
+			height: 2.25em;
+			transform: translate(-50%,-50%);
+			opacity: 0;
+			transition: opacity 200ms ease;
+
+			@each $breakpoint, $container-max-width in $container-max-widths {
+				width: $container-max-width;
+			}
+
+			.owl-prev,
+			.owl-next {
+				position: absolute;
+				width: 2.25em;
+				height: 2.25em;
+				cursor: pointer;
+				transition: all 200ms ease;
+
+				&:hover {
+					transform: scale(1.05);
+				}
+
+				&:active {
+					transform: scale(1.05) translateY(0.125em);
+				}
+			
+				&:focus {
+					outline: none;
+				}
+			
+				span {
+					display: none;
+				}
+				&.disabled {
+					opacity: 0;
+				}
+			}
+			.owl-prev {
+				left: 1em;
+				background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 34.3 34.3'%3E%3Ccircle cx='17.1' cy='17.1' fill='%23231f20' r='17.1'/%3E%3Cpath d='m14.5 17 8.4-8.2-2.8-2.9-11.3 11.3 11.2 11.2 3.1-2.9z' fill='%23fff'/%3E%3C/svg%3E");
+			}
+
+			.owl-next {
+				right: 1em;
+				background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 34.3 34.3'%3E%3Ccircle cx='17.1' cy='17.2' fill='%23000' r='17.1'/%3E%3Cpath d='m19.7 17.3-8.3 8.3 2.8 2.8 11.3-11.2-11.3-11.3-3 3z' fill='%23fff'/%3E%3C/svg%3E");
+			}
+		}
+
+		&:hover .owl-nav {
+			opacity: 1;
+		}
+	}
+}
+
 .bs-register {
 	padding-top: 3em;
 	padding-bottom: 3em;
@@ -899,6 +988,7 @@ footer {
 
 	.bs-grid {
 		grid-template-rows: repeat(1, 1fr);
+		margin-bottom: 3em;
 
 		.bs-grid-item {
 			padding-top: 66.6%;
@@ -913,96 +1003,8 @@ footer {
 		}
 	}
 
-	.bs-3-reasons {
-		padding-top: 5em;
-		padding-bottom: 5em;
-
-		.bs-carousel {
-			.bs-slide {
-				.bs-copy-col {
-					display: flex;
-					flex-direction: column;
-					justify-content: center;
-					padding-left: 5em;
-
-					.bs-eyebrow {
-						margin-bottom: 1em;
-					}
-
-					.bs-heading {
-						margin-bottom: 1em;
-						font-size: 1.5em;
-					}
-
-					.bs-copy {
-						margin-bottom: 2em;
-					}
-
-					.bs-small {
-						font-size: 0.75em;
-						margin-bottom: 2em;
-					}
-				}
-			}
-
-			.owl-nav {
-				position: absolute;
-				top: 50%;
-				left: 50%;
-				height: 2.25em;
-				transform: translate(-50%,-50%);
-				opacity: 0;
-				transition: opacity 200ms ease;
-
-				@each $breakpoint, $container-max-width in $container-max-widths {
-					width: $container-max-width;
-				}
-
-				.owl-prev,
-				.owl-next {
-					position: absolute;
-					width: 2.25em;
-					height: 2.25em;
-					cursor: pointer;
-					transition: all 200ms ease;
-
-					&:hover {
-						transform: scale(1.05);
-					}
-
-					&:active {
-						transform: scale(1.05) translateY(0.125em);
-					}
-				
-					&:focus {
-						outline: none;
-					}
-				
-					span {
-						display: none;
-					}
-					&.disabled {
-						opacity: 0;
-					}
-				}
-				.owl-prev {
-					left: 1em;
-					background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 34.3 34.3'%3E%3Ccircle cx='17.1' cy='17.1' fill='%23231f20' r='17.1'/%3E%3Cpath d='m14.5 17 8.4-8.2-2.8-2.9-11.3 11.3 11.2 11.2 3.1-2.9z' fill='%23fff'/%3E%3C/svg%3E");
-				}
-
-				.owl-next {
-					right: 1em;
-					background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 34.3 34.3'%3E%3Ccircle cx='17.1' cy='17.2' fill='%23000' r='17.1'/%3E%3Cpath d='m19.7 17.3-8.3 8.3 2.8 2.8 11.3-11.2-11.3-11.3-3 3z' fill='%23fff'/%3E%3C/svg%3E");
-				}
-			}
-
-			&:hover .owl-nav {
-				opacity: 1;
-			}
-		}
-	}
-
 	.bs-seasons {
+		margin-top: 3em;
 
 		.bs-header-row {
 			display: flex;
@@ -1196,6 +1198,8 @@ footer {
 	}
 
 	.bs-register {
+		padding-top: 4em;
+		padding-bottom: 3em;
 		background-color: #000;
 		color: #fff;
 	}
