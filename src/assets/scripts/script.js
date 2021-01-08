@@ -347,7 +347,7 @@ $(function()
 
 		new ScrollMagic.Scene
 		({
-			triggerElement: this, triggerHook: 0.5, reverse: false
+			triggerElement: this, triggerHook: 0.65, reverse: false
 		})
 		.setClassToggle(this, 'bs-animated')
 		.addTo(controller);
