@@ -1061,7 +1061,23 @@ footer {
 							transition: color 200ms ease;
 						}
 					}
-				
+
+					&.bs-summer .bs-icon-label .bs-icon {
+						fill: #D9CA0B;
+					}
+
+					&.bs-fall .bs-icon-label .bs-icon {
+						fill: #FF4136;
+					}
+
+					&.bs-winter .bs-icon-label .bs-icon {
+						fill: #00CAFF;
+					}
+
+					&.bs-spring .bs-icon-label .bs-icon {
+						fill: #4ACF00;
+					}
+
 					&:hover .bs-icon-label {
 						transform: scale(1.05);
 					}
@@ -1076,10 +1092,6 @@ footer {
 					&[data-active-slide="#{$i}"] {
 						.bs-item-#{$i} {
 							background-color: #eee;
-
-							.bs-icon {
-								fill: #000;
-							}
 
 							.bs-label {
 								color: #000;
