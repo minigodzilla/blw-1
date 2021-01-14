@@ -338,15 +338,69 @@ h6 {
 //
 // sections
 
+nav {
+	position: fixed;
+	display: flex;
+	align-items: center;
+	pointer-events: none;
+
+	@include media-breakpoint-down(sm) {
+		z-index: 2;
+		top: 0;
+		right: 0;
+		bottom: 0;
+		left: 0;
+		justify-content: center;
+		flex-direction: column;		
+		padding: 4em 2.25em 0 2.25em;
+		background-color: rgba(0,0,0,0.5);
+		opacity: 0;
+		transition: opacity 200ms ease;
+
+		.bs-btn {
+			margin-right: 0;
+			margin-bottom: 1em;
+			width: 100%;
+			font-size: 1.5em;
+		}
+	}
+
+	@include media-breakpoint-up(md) {
+		z-index: 3;
+		right: 2.25em;
+		height: 6.75em;
+		transform: scaleY(0);
+		transition: transform 100ms ease;
+
+		.bs-btn {
+			margin-right: 0;
+			margin-left: 0.5em;
+			color: #fff;
+			transition: all 200ms ease;
+		}
+	}
+}
+
 header {
 	position: fixed;
-	z-index: 2;
 	top: 0;
 	right: 0;
 	left: 0;
-	height: 6.75em;
 	display: flex;
 	align-items: center;
+	background-color: #fff;
+	transform: translateY(-100%);
+	transition: all 200ms ease;
+
+	@include media-breakpoint-down(sm) {
+		z-index: 3;
+		height: 5em;
+	}
+
+	@include media-breakpoint-up(md) {
+		z-index: 2;
+		height: 6.75em;
+	}
 
 	.bs-to-home {
 		display: block;
@@ -363,32 +417,7 @@ header {
 		}
 
 		.bs-svg {
-			fill: #fff;
-		}
-	}
-
-	.bs-nav {
-		position: absolute;
-		z-index: 2;
-		right: 2.25em;
-		transition: transform 100ms ease;
-		transform: scaleY(0);
-		pointer-events: none;
-
-		.bs-btn {
-			margin-right: 0;
-			margin-left: 0.5em;
-			color: #fff;
-			transition: all 200ms ease;
-		}
-	}
-
-	&.bs-nav-open .bs-nav {
-		transform: scaleY(1);
-		pointer-events: auto;
-
-		.bs-btn {
-			color: #000;
+			fill: #000;
 		}
 	}
 
@@ -407,6 +436,7 @@ header {
 			width: 100%;
 			height: 0.125em;
 			background-color: #000;
+			transition: all 200ms ease;
 
 			&::before,
 			&::after {
@@ -417,6 +447,7 @@ header {
 				bottom: 0;
 				left: 0;
 				background-color: #000;
+				transition: all 200ms ease;
 			}
 
 			&::before {
@@ -430,9 +461,99 @@ header {
 	}
 }
 
+body.bs-header-initial header,
+body.bs-header-visible header {
+	transform: translateY(0);
+}
+
+body.bs-header-initial header {
+	transform: translateY(0);
+	background-color: transparent;
+}
+
+body.bs-nav-open {
+	nav {
+		pointer-events: auto;
+
+		@include media-breakpoint-down(sm) {
+			opacity: 1;
+		}
+
+		@include media-breakpoint-up(md) {
+			transform: scaleY(1);
+
+			.bs-btn {
+				color: #000;
+			}
+		}
+
+	}
+	header {
+		transform: translateY(0);
+
+		@include media-breakpoint-down(sm) {
+			background-color: transparent;
+
+			.bs-to-home .bs-svg {
+				fill: #fff;
+			}
+		}
+
+		.bs-nav-toggle .bs-icon {
+			background-color: transparent;
+
+			@keyframes anim-nav-toggle-before {
+				0% {
+					transform: translateY(-400%);
+				}
+				50% {
+					transform: translateY(0);
+				}
+				100% {
+					transform: translateY(0) rotate(45deg);;
+				}
+			}
+
+			@keyframes anim-nav-toggle-after {
+				0% {
+					transform: translateY(400%);
+				}
+				50% {
+					transform: translateY(0);
+				}
+				100% {
+					transform: translateY(0) rotate(-45deg);;
+				}
+			}
+
+			&::before,
+			&::after {
+				background-color: #fff;
+				animation-duration: 400ms;
+				animation-fill-mode: forwards;
+				animation-direction: alternate;
+				//animation-timing-function: ease;
+			}
+
+			&::before {
+				animation-name: anim-nav-toggle-before;
+			}
+
+			&::after {
+				animation-name: anim-nav-toggle-after;
+			}
+		}
+	}
+}
+
+main {
+	@include media-breakpoint-down(sm) {
+		//margin-top: 4em;
+	}
+}
+
 section {
 	position: relative;
-	z-index: 2;
 	background-color: #fff;
 }
 
@@ -500,7 +621,7 @@ section {
 		overflow: hidden;
 
 		@include media-breakpoint-down(sm) {
-			height: 85vh;
+			height: 95vh;
 		}
 
 		@include media-breakpoint-up(md) {
@@ -689,6 +810,7 @@ section {
 	.bs-grid-item {
 		overflow: hidden;
 		position: relative;
+		z-index: 1;
 		background-position: 50% 50%;
 		background-size: 100%;
 		padding-top: 100%;
@@ -753,7 +875,7 @@ section {
 
 	.bs-grid-cta {
 		position: relative;
-		z-index: -1;
+		z-index: 0;
 		display: flex;
 		flex-direction: column;
 		justify-content: center;
@@ -1080,7 +1202,15 @@ footer {
 	}
 
 	.bs-grid {
-		grid-template-rows: repeat(1, 1fr);
+
+		@include media-breakpoint-down(sm) {
+			grid-template-columns: repeat(3, 1fr);
+			grid-template-rows: repeat(1, 1fr);
+		}
+
+		@include media-breakpoint-up(md) {
+			grid-template-rows: repeat(1, 1fr);
+		}
 
 		.bs-grid-item {
 			padding-top: 66.6%;
