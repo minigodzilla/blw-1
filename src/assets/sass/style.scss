@@ -688,6 +688,10 @@ section {
 		height: 100%;
 		padding-left: 0;
 
+		@include media-breakpoint-down(sm) {
+			padding-right: 0;
+		}
+
 		.bs-image {
 			width: 100%;
 		}
@@ -695,13 +699,21 @@ section {
 
 	.bs-text-col {
 		padding-top: 4em;
+		background-color: #fff;
+
+		@include media-breakpoint-down(sm) {
+			text-align: center;
+		}
 
 		.bs-eyebrow {
 			margin-bottom: 0.75em;
 		}
 
 		.bs-copy {
-			margin-right: 4em;
+
+			@include media-breakpoint-up(md) {
+				margin-right: 4em;
+			}
 		}
 
 		.bs-list {
