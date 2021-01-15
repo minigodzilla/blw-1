@@ -690,11 +690,13 @@ section {
 	overflow: hidden;
 	z-index: 1;
 	position: relative;
-	height: 50.625em;
 	margin-bottom: 3em;
 
+	@include media-breakpoint-up(md) {
+		height: 50.625em;
+	}
+
 	.bs-image-col {
-		height: 100%;
 		padding-left: 0;
 
 		@include media-breakpoint-down(sm) {
