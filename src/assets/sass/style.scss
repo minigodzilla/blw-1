@@ -548,7 +548,16 @@ body.bs-nav-open {
 
 main {
 	@include media-breakpoint-down(sm) {
+		filter: blur(0);
+		transition: filter 200ms ease;
+	}
+}
+
+body.bs-nav-open main {
+	@include media-breakpoint-down(sm) {
 		//margin-top: 4em;
+		filter: blur(10px);
+
 	}
 }
 
@@ -940,11 +949,19 @@ section {
 
 	.bs-carousel {
 		.bs-slide {
+			.bs-img-col .bs-img {
+				@include media-breakpoint-down(sm) {
+					margin-bottom: 2em;
+				}
+			}
 			.bs-copy-col {
-				display: flex;
-				flex-direction: column;
-				justify-content: center;
-				padding-left: 5em;
+
+				@include media-breakpoint-up(md) {
+					display: flex;
+					flex-direction: column;
+					justify-content: center;
+					padding-left: 5em;
+				}
 
 				.bs-eyebrow {
 					margin-bottom: 1em;
@@ -1186,29 +1203,73 @@ footer {
 
 		.bs-slide-details {
 			color: #000;
-			top: 2em;
+		
 			bottom: auto;
+
+			@include media-breakpoint-down(sm) {
+				top: 5em;
+			}
+
+			@include media-breakpoint-up(md) {
+				top: 2em;
+			}
 
 			.bs-svg {
 				fill: #000;
+			}
+
+			.bs-pin {
+				@include media-breakpoint-down(sm) {
+					width: 1em;
+					margin-bottom: 0;
+				}
+			}
+
+			.bs-eyebrow {
+				@include media-breakpoint-down(sm) {
+					margin-bottom: 1em;
+				}
+			}
+
+			.bs-logo-menoke {
+				@include media-breakpoint-down(sm) {
+					width: 13.5em;
+				}
 			}
 		}
 		.bs-slide-details-2 {
 			position: absolute;
 			right: 0;
-			bottom: 4em;
 			left: 0;
 			text-align: center;
 
+			@include media-breakpoint-down(sm) {
+				bottom: 2em;
+			}
+
+			@include media-breakpoint-up(md) {
+				bottom: 4em;
+			}
+
 			.bs-heading {
-				font-size: 2.5em;
-				margin-bottom: 0;
+				margin-bottom: 0.5em;
+
+				@include media-breakpoint-down(sm) {
+					font-size: 2em;
+				}
+
+				@include media-breakpoint-up(md) {
+					font-size: 2.5em;
+				}
 			}
 
 			.bs-subheading {
-				font-size: 1.25em;
 				font-weight: 400;
 				letter-spacing: 0.25em;
+
+				@include media-breakpoint-up(md) {
+					font-size: 1.25em;
+				}
 			}
 		}
 	}
@@ -1237,17 +1298,79 @@ footer {
 		}
 	}
 
+	.bs-reasons-grid {
+		@include media-breakpoint-down(sm) {
+			display: none;
+		}
+	}
+
+	.bs-carousel-section {
+		.bs-carousel {
+			@include media-breakpoint-down(sm) {
+				display: block;
+
+				.bs-slide {
+					margin-bottom: 4em;
+					text-align: center;
+				}
+			}
+		}
+	}
+
 	.bs-seasons {
-		margin-top: 3em;
+		@include media-breakpoint-up(md) {
+			margin-top: 3em;
+		}
+		.bs-icon-label {
+			position: absolute;
+			top: 0;
+			right: 0;
+			bottom: 0;
+			left: 0;
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			transition: all 200ms ease;
+
+			.bs-icon {
+				width: 2em;
+				fill: #fff;
+				margin-right: 1em;
+				transition: fill 200ms ease;
+			}
+
+			.bs-label {
+				color: #fff;
+				font-weight: 700;
+				transition: color 200ms ease;
+			}
+		}
+
+		.bs-summer .bs-icon-label .bs-icon {
+			fill: #D9CA0B;
+		}
+
+		.bs-fall .bs-icon-label .bs-icon {
+			fill: #FF4136;
+		}
+
+		.bs-winter .bs-icon-label .bs-icon {
+			fill: #00CAFF;
+		}
+
+		.bs-spring .bs-icon-label .bs-icon {
+			fill: #4ACF00;
+		}
 
 		.bs-header-row {
-			display: flex;
 			height: 6.75em;
-			justify-content: stretch;
+
+			@include media-breakpoint-up(md) {
+				display: flex;
+				justify-content: stretch;
+			}
 
 			.bs-heading {
-				width: 25%;
-				flex-basis: 25%;
 				height: 4.5em;
 				display: flex;
 				align-items: center;
@@ -1256,69 +1379,40 @@ footer {
 				font-size: 1.5em;
 				font-weight: 700;
 				color: #fff;
+
+				@include media-breakpoint-up(md) {
+					width: 25%;
+					flex-basis: 25%;
+				}				
 			}
 
 			.bs-seasons-nav {
-				width: 75%;
-				flex-basis: 75%; 
-				position: relative;
-				display: flex;
-				background-color: #000;
 
-				.bs-item {
+				@include media-breakpoint-down(sm) {
+					display: none;
+				}
+
+				@include media-breakpoint-up(md) {
+					width: 75%;
+					flex-basis: 75%; 
 					position: relative;
-					width: 25%;
-					transition: background-color 200ms ease;
-					cursor: pointer;
+					display: flex;
+					background-color: #000;
 
-					.bs-icon-label {
-						position: absolute;
-						top: 0;
-						right: 0;
-						bottom: 0;
-						left: 0;
-						display: flex;
-						align-items: center;
-						justify-content: center;
-						transition: all 200ms ease;
+					.bs-item {
+						position: relative;
+						width: 25%;
+						transition: background-color 200ms ease;
+						cursor: pointer;
 
-						.bs-icon {
-							width: 2em;
-							fill: #fff;
-							margin-right: 1em;
-							transition: fill 200ms ease;
+						&:hover .bs-icon-label {
+							transform: scale(1.05);
 						}
 
-						.bs-label {
-							color: #fff;
-							font-weight: 700;
-							transition: color 200ms ease;
+						&:active .bs-icon-label {
+							transform: scale(1.05) translateY(0.125em);
+							transition: all 50ms ease;
 						}
-					}
-
-					&.bs-summer .bs-icon-label .bs-icon {
-						fill: #D9CA0B;
-					}
-
-					&.bs-fall .bs-icon-label .bs-icon {
-						fill: #FF4136;
-					}
-
-					&.bs-winter .bs-icon-label .bs-icon {
-						fill: #00CAFF;
-					}
-
-					&.bs-spring .bs-icon-label .bs-icon {
-						fill: #4ACF00;
-					}
-
-					&:hover .bs-icon-label {
-						transform: scale(1.05);
-					}
-
-					&:active .bs-icon-label {
-						transform: scale(1.05) translateY(0.125em);
-						transition: all 50ms ease;
 					}
 				}
 
@@ -1353,14 +1447,46 @@ footer {
 			}
 		}
 
+		.bs-season-carousel {
+			@include media-breakpoint-down(sm) {
+				display: block;
+			}
+		}
+
+		.bs-mobile-heading {
+			position: absolute;
+			width: 100%;
+			height: 4.5em;
+			background-color: #eee;
+			color: #000;
+
+			.bs-icon-label .bs-label {
+				color: #000;
+			}
+		}
+
 		.bs-slide {
 			display: flex;
 
+			.owl-stage-outer {
+				@include media-breakpoint-down(sm) {
+					zoom: 0.9;
+				}
+			}
+
 			.bs-event {
 				position: relative;
-				flex-basis: 25%; 
 				display: flex;
 				flex-direction: column;
+
+				@include media-breakpoint-down(sm) {
+					flex-basis: 100%; 
+					margin-top: 5em;
+				}
+
+				@include media-breakpoint-up(md) {
+					flex-basis: 25%; 
+				}
 
 				&::before {
 					content: '';
