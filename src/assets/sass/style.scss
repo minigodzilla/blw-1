@@ -165,27 +165,22 @@ h6 {
 	}
 }
 
-.bs-select-choice {
-	text-align: center;
-	font-weight: 400;
-	line-height: 1.15;
-
-	@include media-breakpoint-down(sm) {
-		font-size: 3em;
-	}
-
-	@include media-breakpoint-up(md) {
-		font-size: 4em;
-	}
-}
-
 .bs-select {
-	position: absolute;
-	top: 0;
-	right: 0;
-	bottom: 0;
-	left: 0;
-	opacity: 0;
+	width: 100%;
+	padding: 0.5em;
+	border-color: transparent;
+	border-radius: 0;
+	border-width: 0;
+	color: #000;
+
+	&,
+	&:hover {
+		background-color: #eee;
+	}
+
+	&::placeholder {
+		color: #aaa;
+	}
 }
 
 .form-check {
