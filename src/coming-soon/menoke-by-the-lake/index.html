@@ -451,90 +451,10 @@
 						<h1 class="bs-eyebrow bs-animated-item bs-animate-order-1">REGISTER</h1>
 						<h1 class="bs-heading bs-animated-item bs-animate-order-2">And You Have Arrived.</h1>
 						<p class="bs-copy bs-animated-item bs-animate-order-3">Register for Menoke by the Lake today and be among the first to receive the latest news and updates as this community progresses.</p>
-						<form id="bs-register-form" action="register.php" method="post">
-							<div class="bs-form-container bs-animated-item bs-animate-order-4">
-								<input type="hidden" id="cid" name="cid" value="22864" />
-								<input type="hidden" id="Origin" name="Origin" value="Microsite Registration" />
-								<div class="row bs-form-fields">
-									<div class="col-12">
-										<div class="form-group">
-											<input type="text" class="form-control" id="FirstName" name="FirstName" placeholder="First Name*">
-											<small id="v-error-FirstName" class="invalid-feedback form-text text-danger">Please enter your first name.</small>
-										</div>
-									</div>
-									<div class="col-12">
-										<div class="form-group">
-											<input type="text" class="form-control" id="LastName" name="LastName" placeholder="Last Name*">
-											<small id="v-error-LastName" class="invalid-feedback form-text text-danger">Please enter your last name.</small>
-										</div>
-									</div>
-									<div class="col-6 bs-phone-col">
-										<div class="form-group">
-											<input type="tel" class="form-control" id="Phone" name="Phone" placeholder="Phone*">
-											<small id="v-error-Phone" class="invalid-feedback form-text text-danger">Please enter your phone number.</small>
-										</div>
-									</div>
-									<div class="col-6 bs-email-col">
-										<div class="form-group">
-											<input type="text" class="form-control" id="Email" name="Email" placeholder="Email*">
-											<small id="v-error-Email" class="invalid-feedback form-text text-danger">Please enter your email address.</small>
-										</div>
-									</div>
-									<div class="col-12">
-										<div class="form-group">
-											<textarea class="form-control" id="Message" name="Message" placeholder="Message"></textarea>
-										</div>
-									</div>
-									<!-- <div class="col-12">
-										<div class="form-group p-relative">
-											<div class="bs-select-choice">How did you hear about us?</div>
-											<select class="bs-select" id="Custom2" name="Custom2">
-												<option value="" disabled selected>How did you hear about us?</option>
-												<option>Site signage</option>
-												<option>Mississauga News</option>
-												<option>Oakville Beaver</option>
-												<option>Snapped Article</option>
-												<option>Google Search</option>
-												<option>Google Display Ad</option>
-												<option>Instagram Ad</option>
-												<option>Facebook Ad</option>
-												<option>Referral</option>
-											</select>
-											<small id="v-error-Custom2" class="invalid-feedback form-text text-danger">Please tell us how you heard about us.</small>
-										</div>
-									</div>
-									<div class="col-12">
-										<div class="bs-form-toggle">
-											<input class="bs-form-toggle-input" type="hidden" value="true" id="isBroker" name="isBroker">
-											<div class="bs-form-toggle-label">Are you a Realtor?</div>
-											<div class="bs-form-toggle-option bs-no" data-value="false">No</div>
-											<div class="bs-form-toggle-option bs-yes" data-value="true">Yes</div>
-										</div>
-									</div>
-									<div class="col-12">
-										<div class="form-check">
-											<label class="form-check-label" for="Custom1">Do you agree to the <a href="terms.html">terms and conditions</a>?</label>
-											<input class="form-check-input" type="checkbox" value="" id="Custom1" name="Custom1">
-											<span class="bs-form-check-span">Yes</span>
-										</div>
-									</div> -->
-									<div class="col-12">
-										<div class="form-group">
-											<button type="submit" class="btn bs-btn bs-btn-submit">SUBMIT</button>
-										</div>
-									</div>
-								</div>
-							</div>
-							<div class="bs-form-error-container">
-								<p class="bs-copy">An error occured.<br/>Please try again later.</p>
-							</div>
-							<div class="bs-form-success-container">
-								<p class="bs-copy">Thank you<br/>for your registration!</p>
-							</div>
-						</form>
+						<partial src="register.html" name="menoke-by-the-lake"></partial>
 					</div>
-					<div class="col-12 col-md-6 h-100 bs-map-col">
-						<img class="w-100 h-100 bs-img bs-map" src="/assets/img/coming-soon-menoke-by-the-lake-register.jpg"/>
+					<div class="col-12 col-md-6 bs-map-col">
+						<iframe class="w-100 h-100 bs-map" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2836.9762135905526!2d-79.39898498446865!3d44.679264779099505!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4d2aa6721eb998fb%3A0xf9e05ba7bb0a9a73!2sMenoke%20Beach%20Rd%2C%20Severn%2C%20ON%20L3V%206H3!5e0!3m2!1sen!2sca!4v1611614342210!5m2!1sen!2sca" frameborder="0"></iframe>
 					</div>
 				</div>
 			</div>

@@ -1,94 +1,69 @@
-<section class="bs-register bs-animated-section" id="register" data-has-details="@@has-details">
-    <div class="container">
-        <div class="row">
-            <div class="col-12 col-md-6 bs-animated-item bs-animate-order-1">
-                <h1 class="bs-heading">Register Now</h1>
+<form id="bs-register-form" action="register.php" method="post">
+    <div class="bs-form-container bs-animated-item bs-animate-order-2">
+        <input type="hidden" id="cid" name="cid" value="22864" />
+        <input type="hidden" id="Origin" name="Origin" value="Microsite Registration" />
+        <div class="row bs-form-fields">
+            <div class="col-12">
+                <div class="form-group">
+                    <input type="text" class="form-control" id="FirstName" name="FirstName" placeholder="First Name*"> <small id="v-error-FirstName" class="invalid-feedback form-text text-danger">Please enter your first name.</small>
 
-                <p class="bs-copy">@@details</p>
+                </div>
             </div>
-        </div>
-        <div class="row">
-            <div class="col-12 col-md-6 bs-form-col">
-                <form id="bs-register-form" action="register.php" method="post">
-                    <div class="bs-form-container bs-animated-item bs-animate-order-2">
-                        <input type="hidden" id="cid" name="cid" value="22864" />
-                        <input type="hidden" id="Origin" name="Origin" value="Microsite Registration" />
-                        <div class="row bs-form-fields">
-                            <div class="col-12">
-                                <div class="form-group">
-                                    <input type="text" class="form-control" id="FirstName" name="FirstName" placeholder="First Name*"> <small id="v-error-FirstName" class="invalid-feedback form-text text-danger">Please enter your first name.</small>
+            <div class="col-12">
+                <div class="form-group">
+                    <input type="text" class="form-control" id="LastName" name="LastName" placeholder="Last Name*"> <small id="v-error-LastName" class="invalid-feedback form-text text-danger">Please enter your last name.</small>
 
-                                </div>
-                            </div>
-                            <div class="col-12">
-                                <div class="form-group">
-                                    <input type="text" class="form-control" id="LastName" name="LastName" placeholder="Last Name*"> <small id="v-error-LastName" class="invalid-feedback form-text text-danger">Please enter your last name.</small>
-
-                                </div>
-                            </div>
-                            <div class="col-6 bs-phone-col">
-                                <div class="form-group">
-                                    <input type="tel" class="form-control" id="Phone" name="Phone" placeholder="Phone*"> <small id="v-error-Phone" class="invalid-feedback form-text text-danger">Please enter your phone number.</small>
-
-                                </div>
-                            </div>
-                            <div class="col-6 bs-email-col">
-                                <div class="form-group">
-                                    <input type="text" class="form-control" id="Email" name="Email" placeholder="Email*"> <small id="v-error-Email" class="invalid-feedback form-text text-danger">Please enter your email address.</small>
-
-                                </div>
-                            </div>
-                            <div class="col-12">
-                                <div class="form-group">
-                                    <textarea class="form-control" id="Message" name="Message" placeholder="Message"></textarea>
-                                </div>
-                            </div>
-                            <div class="col-12">
-                                <div class="form-group p-relative">
-                                    <select class="bs-select" id="Custom2" name="Custom2">
-                                        <option value="" disabled selected>How did you hear about us?</option>
-                                        <option>Site signage</option>
-                                        <option>Referral</option>
-                                    </select> <small id="v-error-Custom2" class="invalid-feedback form-text text-danger">Please tell us how you heard about us.</small>
-
-                                </div>
-                            </div>
-                            <div class="col-12">
-                                <div class="bs-form-toggle">
-                                    <input class="bs-form-toggle-input" type="hidden" value="true" id="IsBroker" name="IsBroker" />
-                                    <input type="checkbox" class="bs-checkbox" id="realtor-checkbox" />
-                                    <label for="realtor-checkbox" class="bs-form-toggle-label">Are you a Realtor?</label>
-                                </div>
-                            </div>
-                            <!-- <div class="col-12">
-								<div class="form-check">
-									<label class="form-check-label" for="Custom1">Do you agree to the <a href="terms.html">terms and conditions</a>?</label>
-									<input class="form-check-input" type="checkbox" value="" id="Custom1" name="Custom1">
-									<span class="bs-form-check-span">Yes</span>
-								</div>
-							</div> -->
-                            <div class="col-12">
-                                <div class="form-group">
-                                    <button type="submit" class="btn bs-btn bs-invert bs-btn-submit">SUBMIT</button>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="bs-form-error-container">
-                        <p class="bs-copy">An error occured.
-                            <br />Please try again later.
-                        </p>
-                    </div>
-                    <div class="bs-form-success-container">
-                        <p class="bs-copy">Thank you
-                            <br />for your registration!
-                        </p>
-                    </div>
-                </form>
+                </div>
             </div>
-            <div class="col-12 col-md-6 bs-map-col">
-                <img class="w-100 h-100 bs-img bs-map" src="/assets/img/@@name-location.png" />
+            <div class="col-6 bs-phone-col">
+                <div class="form-group">
+                    <input type="tel" class="form-control" id="Phone" name="Phone" placeholder="Phone*"> <small id="v-error-Phone" class="invalid-feedback form-text text-danger">Please enter your phone number.</small>
+
+                </div>
+            </div>
+            <div class="col-6 bs-email-col">
+                <div class="form-group">
+                    <input type="text" class="form-control" id="Email" name="Email" placeholder="Email*"> <small id="v-error-Email" class="invalid-feedback form-text text-danger">Please enter your email address.</small>
+
+                </div>
+            </div>
+            <div class="col-12">
+                <div class="form-group">
+                    <textarea class="form-control" id="Message" name="Message" placeholder="Message"></textarea>
+                </div>
+            </div>
+            <div class="col-12">
+                <div class="form-group p-relative">
+                    <select class="bs-select" id="Custom2" name="Custom2">
+                        <option value="" disabled selected>How did you hear about us?</option>
+                        <option>Site signage</option>
+                        <option>Referral</option>
+                    </select> <small id="v-error-Custom2" class="invalid-feedback form-text text-danger">Please tell us how you heard about us.</small>
+
+                </div>
+            </div>
+            <div class="col-12">
+                <div class="bs-form-toggle">
+                    <input class="bs-form-toggle-input" type="hidden" value="true" id="IsBroker" name="IsBroker" />
+                    <input type="checkbox" class="bs-checkbox" id="realtor-checkbox" />
+                    <label for="realtor-checkbox" class="bs-form-toggle-label">Are you a Realtor?</label>
+                </div>
+            </div>
+            <div class="col-12">
+                <div class="form-group">
+                    <button type="submit" class="btn bs-btn @@btn bs-btn-submit">SUBMIT</button>
+                </div>
             </div>
         </div>
     </div>
-</section>
+    <div class="bs-form-error-container">
+        <p class="bs-copy">An error occured.
+            <br />Please try again later.
+        </p>
+    </div>
+    <div class="bs-form-success-container">
+        <p class="bs-copy">Thank you
+            <br />for your registration!
+        </p>
+    </div>
+</form>
