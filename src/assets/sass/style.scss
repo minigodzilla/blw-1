@@ -1093,14 +1093,42 @@ section {
 	}
 
 	.bs-map-col {
+		display: flex;
+		flex-direction: column;
 
 		@include media-breakpoint-down(sm) {
-			display: none;
+			height: 35em;
 		}
 
 		.bs-map {
 			height: 100%;
 			object-fit: cover;
+		}
+
+		.form-group {
+			margin-top: 1em;
+			display: flex;
+
+			.bs-btn {
+				display: flex;
+				white-space: nowrap;
+
+				@include media-breakpoint-down(sm) {
+					padding: 0.75em 2em;
+				}
+
+				.bs-icon {
+					margin-right: 1em;
+				}
+
+				&.bs-btn-gmaps .bs-icon {
+					width: 1em;
+				}
+
+				&.bs-btn-waze .bs-icon {
+					width: 1.5em;
+				}
+			}
 		}
 	}
 
