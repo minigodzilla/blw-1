@@ -190,9 +190,8 @@ $(function()
 
 	$('.bs-select').on('change',function() {
 
-		var value = $(this).val();
+		$(this).addClass('bs-used');
 
-		$('.bs-select-choice').html(value);
 	});
 
 	$('.bs-form-toggle-option').on('click', function() {
