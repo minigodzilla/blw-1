@@ -270,10 +270,13 @@
                                         </div>
                                     </div>
                                     <div class="col-6 bs-is-broker-col">
-                                        <div class="bs-form-toggle">
-                                            <input type="hidden" value="true" id="IsBroker" name="IsBroker" />
-                                            <input type="checkbox" class="bs-checkbox" id="realtor-checkbox" />
-                                            <label for="realtor-checkbox" class="bs-checkbox-label">Are you a Realtor?</label>
+                                        <div class="form-group p-relative">
+                                            <select class="bs-select" id="IsBroker" name="IsBroker">
+                                                <option value="" disabled selected>Are you a realtor?</option>
+                                                <option>Yes</option>
+                                                <option>No</option>
+                                            </select> <small id="v-error-Custom2" class="invalid-feedback form-text text-danger">Please tell us whether you are a realtor.</small>
+
                                         </div>
                                     </div>
                                     <div class="col-12">
