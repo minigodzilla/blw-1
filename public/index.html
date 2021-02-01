@@ -242,11 +242,37 @@
                                         </div>
                                     </div>
                                     <div class="col-12">
+                                        <div class="form-group p-relative">
+                                            <!-- <select class="bs-select" id="bs-future-select">
+						<option class="bs-placeholder" value="" disabled selected>Which Future development are you interested in?</option>
+						<option>&#9745;&#65039; Menoke by the Lake</option>
+						<option>Turnbull Lakeside</option>
+						<option>Memorial Avenue</option>
+						<option>Sand Cherry Court</option>
+						<option>Hawk Ridge Residence</option>
+						<option>6200 Yonge St</option>
+					</select> -->
+                                            <div class="bs-multi-select">
+                                                <input type="hidden" id="Custom2" name="Custom2" value="" />
+                                                <div class="bs-multi-select-placeholder">Which Future development are you interested in?</div>
+                                                <div class="bs-multi-select-options">
+                                                    <div class="bs-option bs-unselected">Menoke by the Lake</div>
+                                                    <div class="bs-option bs-unselected">Turnbull Lakeside</div>
+                                                    <div class="bs-option bs-unselected">Memorial Avenue</div>
+                                                    <div class="bs-option bs-unselected">Sand Cherry Court</div>
+                                                    <div class="bs-option bs-unselected">Hawk Ridge Residence</div>
+                                                    <div class="bs-option bs-unselected">6200 Yonge St</div>
+                                                </div>
+                                            </div> <small id="v-error-Custom2" class="invalid-feedback form-text text-danger">Please tell us how you heard about us.</small>
+
+                                        </div>
+                                    </div>
+                                    <div class="col-12">
                                         <div class="form-group">
                                             <textarea class="form-control" id="Message" name="Message" placeholder="Message"></textarea>
                                         </div>
                                     </div>
-                                    <div class="col-12">
+                                    <div class="col-6 bs-how-col">
                                         <div class="form-group p-relative">
                                             <select class="bs-select" id="Custom2" name="Custom2">
                                                 <option value="" disabled selected>How did you hear about us?</option>
@@ -256,7 +282,7 @@
 
                                         </div>
                                     </div>
-                                    <div class="col-12">
+                                    <div class="col-6 bs-is-broker-col">
                                         <div class="bs-form-toggle">
                                             <input type="hidden" value="true" id="IsBroker" name="IsBroker" />
                                             <input type="checkbox" class="bs-checkbox" id="realtor-checkbox" />

@@ -188,6 +188,44 @@ $(function()
 $(function()
 {
 
+	$('.bs-multi-select-placeholder').on('click', function() {
+		$('.bs-multi-select').toggleClass('bs-used');
+		$('.bs-multi-select-options').toggle();
+	});
+
+	$('.bs-option').on('click', function() {
+
+		var $option =  $(this).html();
+
+		if ($(this).hasClass("bs-unselected")) {
+
+			$('input#Custom2').val(function() {
+
+				var $formattedOption = ', ' + $option;
+
+				if ($(this).val() != '') {
+					return this.value + $formattedOption;
+				}
+				else {
+					return this.value = $option;
+				}
+			});
+
+			$(this).removeClass('bs-unselected').addClass('bs-selected');
+		}
+		else {
+			$('input#Custom2').val(function() {
+
+				var $formattedOption = ', ' + $option;
+
+				return this.value - $formattedOption;
+			});
+
+			$(this).removeClass('bs-selected').addClass('bs-unselected');
+		}
+
+	});
+
 	$('.bs-select').on('change',function() {
 
 		$(this).addClass('bs-used');
