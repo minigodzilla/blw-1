@@ -1150,22 +1150,25 @@ section {
 			position: absolute;
 			width: 100%;
 			left: 0;
-			top: 10em;
+			top: 7em;
 			text-align: center;
-			opacity: 0;
+			visibility: hidden;
 			pointer-events: none;
+			font-size: 1.5em;
+			font-weight: 600;
+			line-height: 1.25;
 		}
 
 		&.bs-success,
 		&.bs-error {
 			.bs-form-container {
-				opacity: 0;
+				visibility: hidden;
 			}
 		}
 
 		&.bs-success .bs-form-success-container,
 		&.bs-error .bs-form-error-container {
-			opacity: 1;
+			visibility: visible;
 		}
 
 		.bs-phone-col {
