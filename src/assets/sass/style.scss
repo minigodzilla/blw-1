@@ -193,6 +193,7 @@ h6 {
 }
 
 .bs-multi-select {
+	display: block;
 	position: relative;
 	appearance: none;
 	width: 100%;
@@ -203,8 +204,8 @@ h6 {
 	background-position: calc(100% - 0.325em) 50%;
 	background-repeat: no-repeat;
 	background-size: 1em;
-	color: #aaa;
 	padding: 0.5em 0.75em;
+	font-weight: 400;
 
 	&.bs-used {
 		color: #000;
@@ -213,7 +214,11 @@ h6 {
 	&,
 	&:hover {
 		background-color: #eee;
+		color: #aaa;
+		text-decoration: none;
 	}
+
+	&:focus .bs-multi-select-options { display: block; }
 
 	.bs-multi-select-options {
 		display: none;
@@ -223,6 +228,7 @@ h6 {
 		width: 100%;
 		padding: 0.5em 0.75em;
 		background-color: #eee;
+		color: #000;
 		columns: 2;
 
 		.bs-option {
