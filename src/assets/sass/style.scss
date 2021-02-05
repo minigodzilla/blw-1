@@ -1171,6 +1171,11 @@ section {
 			visibility: visible;
 		}
 
+		div[data-section='future'],
+		div[data-section='coming-soon'] {
+			display: none;
+		}
+
 		.bs-phone-col {
 			padding-right: 0.5em;
 		}
@@ -1227,7 +1232,6 @@ section {
 			}
 		}
 	}
-
 }
 
 footer {
